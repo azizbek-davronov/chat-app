@@ -37,26 +37,11 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               verticalSpacing(24),
-              // Text(
-              //   'WELCOME BACK!',
-              //   textAlign: TextAlign.center,
-              //   style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-              // ),
               Image.network(
                 'https://cdn-icons-png.flaticon.com/512/9374/9374940.png',
                 height: 200,
               ),
               verticalSpacing(24),
-              // Container(
-              //   height: 120,
-              //   width: 120,
-              //   child: FlutterLogo(),
-              //   padding: EdgeInsets.all(24),
-              //   margin: EdgeInsets.all(24),
-              //   decoration: BoxDecoration(
-              //       color: Colors.white,
-              //       borderRadius: BorderRadius.circular(24)),
-              // ),
               Form(
                 key: _formkey,
                 child: Column(
@@ -93,9 +78,7 @@ class LoginPage extends StatelessWidget {
                   )),
               SizedBox(height: 24),
               GestureDetector(
-                onTap: () {
-                  print('onTap');
-                },
+                onTap: () {},
                 child: Column(
                   children: [
                     Text('FORGOT PASSWORD?'),
