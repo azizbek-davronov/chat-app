@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/models/chat_message_entity.dart';
+import 'package:helloworld/services/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class ChatBubble extends StatelessWidget {
   final ChatMessageEntity entity;
@@ -8,33 +10,39 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isAuthor =
+        entity.author.userName == context.read<AuthService>().getUserName();
     return Align(
       alignment: alignment,
       child: Container(
         constraints:
-            BoxConstraints(maxWidth: MediaQuery.of(context).size.width / 2),
-        padding: EdgeInsets.all(12),
+            BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.5),
+        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            color: isAuthor ? Colors.deepPurpleAccent : Colors.black87,
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+                bottomLeft: Radius.circular(12))),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '${entity.text}',
-              style: TextStyle(fontSize: 18),
+              entity.text,
+              style: const TextStyle(fontSize: 18),
             ),
             if (entity.imageUrl != null)
-              Image.network(
-                '${entity.imageUrl}',
+              Container(
                 height: 100,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: NetworkImage(entity.imageUrl!)),
+                    borderRadius: BorderRadius.circular(12)),
               ),
           ],
         ),
-        margin: EdgeInsets.all(50),
-        decoration: BoxDecoration(
-            color: Colors.grey,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-                bottomLeft: Radius.circular(12))),
       ),
     );
   }

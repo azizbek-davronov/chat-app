@@ -21,10 +21,11 @@ class LoginTextField extends StatelessWidget {
         if (validator != null) {
           return validator!(value);
         }
+        return null;
       },
       controller: controller,
-      decoration:
-          InputDecoration(hintText: hintText, border: OutlineInputBorder()),
+      decoration: InputDecoration(
+          hintText: hintText, border: const OutlineInputBorder()),
     );
   }
 }

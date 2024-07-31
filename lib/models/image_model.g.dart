@@ -7,18 +7,12 @@ part of 'image_model.dart';
 // **************************************************************************
 
 ImageModel _$ImageModelFromJson(Map<String, dynamic> json) => ImageModel(
-      id: json['id'] as String,
-      filename: json['filename'] as String,
-      title: json['title'] as String?,
-      urlFullSize: json['url_full_size'] as String,
-      urlSmallSize: json['url_small_size'] as String,
+      id: json['id'] as int,
+      imageUrl: json['imageUrl'] as String,
     );
 
 Map<String, dynamic> _$ImageModelToJson(ImageModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'filename': instance.filename,
-      'title': instance.title,
-      'url_full_size': instance.urlFullSize,
-      'url_small_size': instance.urlSmallSize,
+      'imageUrl': instance.imageUrl,
     };
