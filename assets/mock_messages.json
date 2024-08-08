@@ -1,0 +1,26 @@
+[
+    {
+      "id": "00001",
+      "author": {"userName": "Ajizu"},
+      "text": "what's up, mate?",
+      "createdAt": 21072024
+    },
+    {
+      "id": "00002",
+      "author": {"userName": "Ajizu"},
+      "text": "let's play basketball today!",
+      "createdAt": 21072024
+    },
+    {
+      "id": "00003",
+      "author": {"userName": "User2"},
+      "text": "hey, brother!",
+      "createdAt": 21072024
+    },
+    {
+      "id": "00004",
+      "author": {"userName": "User2"},
+      "text": "go!",
+      "createdAt": 21072024
+    }
+  ]

@@ -1,6 +1,6 @@
-import 'dart:convert';
+// import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'package:helloworld/models/chat_message_entity.dart';
 import 'package:helloworld/services/auth_service.dart';
 import 'package:helloworld/widgets/chat_bubble.dart';
@@ -18,24 +18,24 @@ class _ChatPageState extends State<ChatPage> {
   //initial state of messages
   List<ChatMessageEntity> messages = [];
 
-  loadMessage() async {
-    rootBundle
-        .loadString('.dart_tool/assets/mock_messages.json')
-        .then((response) {
-      final List<dynamic> decodeList = jsonDecode(response) as List;
+  // loadMessage() async {
+  //   rootBundle
+  //       .loadString('.dart_tool/assets/mock_messages.json')
+  //       .then((response) {
+  //     final List<dynamic> decodeList = jsonDecode(response) as List;
 
-      final List<ChatMessageEntity> chatMessages = decodeList.map((listItem) {
-        return ChatMessageEntity.fromJson(listItem);
-      }).toList();
+  //     final List<ChatMessageEntity> chatMessages = decodeList.map((listItem) {
+  //       return ChatMessageEntity.fromJson(listItem);
+  //     }).toList();
 
-      print(chatMessages.length);
+  //     print(chatMessages.length);
 
-      //final state of messages
-      setState(() {
-        messages = chatMessages;
-      });
-    });
-  }
+  //     //final state of messages
+  //     setState(() {
+  //       messages = chatMessages;
+  //     });
+  //   });
+  // }
 
   onMessageSent(ChatMessageEntity entity) {
     messages.add(entity);
@@ -44,7 +44,7 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    loadMessage();
+    // loadMessage();
     super.initState();
   }
 
@@ -57,11 +57,11 @@ class _ChatPageState extends State<ChatPage> {
         elevation: 0,
         title: Text('Hi, $username'),
         actions: [
-          IconButton(
-              onPressed: () {
-                context.read<AuthService>().updateUserName('Aziz Davronov');
-              },
-              icon: const Icon(Icons.update)),
+          // IconButton(
+          //     onPressed: () {
+          //       context.read<AuthService>().updateUserName('Aziz Davronov');
+          //     },
+          //     icon: const Icon(Icons.update)),
           IconButton(
               onPressed: () {
                 context.read<AuthService>().logoutUser();

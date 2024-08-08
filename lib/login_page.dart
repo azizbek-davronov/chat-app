@@ -3,7 +3,7 @@ import 'package:helloworld/services/auth_service.dart';
 import 'package:helloworld/utilities/spaces.dart';
 import 'package:helloworld/widgets/login_textfield.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_buttons/social_media_button.dart';
+// import 'package:social_media_buttons/social_media_button.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -43,17 +43,17 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFooter() {
-    return const Column(
-      children: [
-        Text('FIND US ON'),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [SocialMediaButton.github(), SocialMediaButton.linkedin()],
-        ),
-      ],
-    );
-  }
+  // Widget _buildFooter() {
+  //   return const Column(
+  //     children: [
+  //       Text('FIND US ON'),
+  //       Row(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [SocialMediaButton.github(), SocialMediaButton.linkedin()],
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildForm(context) {
     return Column(
@@ -121,7 +121,7 @@ class LoginPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         _buildHeader(context),
-                        _buildFooter(),
+                        // _buildFooter(),
                       ],
                     ),
                   ),
@@ -137,7 +137,7 @@ class LoginPage extends StatelessWidget {
               children: [
                 _buildHeader(context),
                 _buildForm(context),
-                _buildFooter()
+                // _buildFooter()
               ],
             );
           }),
